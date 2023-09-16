@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Semantically Stylized Radiance Fields (S2RF)">
+  <meta name="keywords" content="ARF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S2RF: Semantically Stylized Radiance Fields</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/Robotics_Institute_logo.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+   <style>
+        #wrapper { 
+    width: 920px; 
+    height: auto; 
+    margin: 0 auto;
+} 
+#home1 { 
+    width: 30%; 
+    height: 300px; 
+    float: left; 
+    margin-right: 5%;
+} 
+
+#home2 { 
+    width: 30%; 
+    height: 300px; 
+    float: left; 
+}
+
+ #home3 { 
+    width: 30%; 
+    height: 300px; 
+    float: left; 
+}
+
+.clear{
+    clear: both;
+}
+
+@media (max-width:767px) {
+    #wrapper{
+        width: 100%;
+        height: auto;
+    }
+    #home1 {
+        width: 100%;
+        height: auto;
+        float: none;
+    }
+    #home2 {
+        width: 100%;
+        height: auto;
+        float: none;
+    }
+    #home3 {
+        width: 100%;
+        height: auto;
+        float: none;
+    }
+}
+    </style>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <!-- <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">S2RF: Semantically Stylized Radiance Fields</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/dishani-lahiri/">Dishani Lahiri</a>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/moneishkumar/">Moneish Kumar</a>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/neeraj-panse-782b53155/">Neeraj Panse</a>
+            </span>
+<!--             <span class="author-block">
+              <a href="">Rupanjali Kukal</a>
+            </span> -->
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Carnegie Mellon University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2309.01252"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/neepacmu/ARF-svox2"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+<!--               <span class="link-block">
+                <a href="https://github.com/neepacmu/ARF-svox2/blob/master/download_data.sh"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          We present our method for transferring style from any arbitrary image(s) to object(s) within a 3D scene. Our primary objective is to offer more control in 3D scene stylization, facilitating the creation of customizable and stylized scene images from arbitrary viewpoints. To achieve this, we propose a novel approach that incorporates nearest neighborhood-based loss, allowing for flexible 3D scene reconstruction while effectively capturing intricate style details and ensuring multi-view consistency.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/vid1_text.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf"> S2RF can help style all objects belonging to a class in the scene based on any given style. 
+      </h2>
+
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/vid_multi_flower_text.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf"> S2RF can help style selected instances of the class in the scene based on any given styles. 
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- 
+<div class="container">
+  <div class="video-container">
+      <video controls>
+           <source src="./static/videos/room_table141_chair15.mp4"
+                      type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+  <div class="video-container">
+      <video controls>
+           <source src="./static/videos/room_table141_chair15.mp4"
+                      type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+</div> -->
+    
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Stylized NeRFs</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="200%">
+            <source src="./static/videos/room_table141_chair15.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="200%">
+            <source src="./static/videos/room_tv133_table131_chair19.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="200%">
+            <source src="./static/videos/room_table131_tv19.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="200%">
+            <source src="./static/videos/room_table133_chair131.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+    
+<h2 class="title is-3">Stylized NeRFs</h2>
+    
+<div id="wrapper">
+    <video id="home1" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
+        <source type="video/mp4" src="./static/videos/room.mp4" /> 
+    </video>
+    <video id="home2" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
+        <source type="video/mp4" src="./static/videos/test_renders_path_table133_chair131.mp4" /> 
+    </video>
+  <video id="home3" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
+        <source type="video/mp4" src="./static/videos/room_styled.mp4" /> 
+    </video>
+    <div class="clear"></div> 
+</div>
+
+<div id="wrapper"> 
+    <video id="home1" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
+        <source type="video/mp4" src="./static/videos/flower.mp4" /> 
+    </video>
+    <video id="home2" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
+        <source type="video/mp4" src="./static/videos/flower_instance_styled.mp4" /> 
+    </video>
+    <video id="home3" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
+        <source type="video/mp4" src="./static/videos/flower_semantic.mp4" /> 
+    </video>
+    <div class="clear"></div> 
+</div>
+
+<div id="wrapper"> 
+    <video id="home1" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
+        <source type="video/mp4" src="./static/videos/xmaschair.mp4" /> 
+    </video>
+    <video id="home2" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
+        <source type="video/mp4" src="./static/videos/xmas_chair_styled_2.mp4" /> 
+    </video>
+    <video id="home3" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
+        <source type="video/mp4" src="./static/videos/xmaschair_styled.mp4" /> 
+    </video>
+    <div class="clear"></div> 
+</div>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3"></h2>
+        <div class="content has-text-justified">
+          <p>
+            We used Nearest Neighbor Feature Matching (NNFM) loss besides using Gram loss in order to train our radiance fields. Thus, we achieve higher quality renderings.
+
+            While performing our experimentations, we observed that subsampling the mask in order to extract the object features from the VGG feature space leads to boundary artifacts as the style loss applies to a larger area than the original mask owing to the receptive field of the model. In order to circumvent this, we work with the mask in the image space itself. The quality of the rendering depends heavily on the segmentation masks of the objects. As the SAM is very accurate at producing refined segmentation masks for objects, we do not really run into many issues pertaining this. Thus, we are able to produce high-quality and high fidelity renderings with specific objects being styled the way an user would want. Based on our experiments, our method has proven to be robust and scales well to increasing number of objects and styles. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-steve">
+              <video poster="" id="steve" autoplay controls muted loop playsinline height="200%">
+                <source src="./static/videos/GRAMVSNNFM.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+            <div class="item item-shiba">
+              <video poster="" id="shiba" autoplay controls muted loop playsinline height="200%">
+                <source src="./static/videos/mask_scale.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+
+
+
+</body>
+</html>

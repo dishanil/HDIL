@@ -300,16 +300,18 @@
     </div>
     
 <div id="wrapper">
-    <image id="home1" width="400" height="300" poster="images/flowchart.jpeg" autoplay controls muted loop playsinline preload="none">
-        <source type="image" src="./static/images/flowchart.jpeg" />
-    </image>
-    <image id="home2" width="400" height="300" poster="images/blip2.png" autoplay controls muted loop playsinline preload="none">
-        <source type="image" src="./static/images/blip2.png" />
-    </image>
-  <image id="home3" width="400" height="300" poster="images/gpt.png" autoplay controls muted loop playsinline preload="none">
-        <source type="image" src="./static/images/gpt.png" />
-    </image>
-    <div class="clear"></div> 
+    <img src="./static/images/flowchart.jpeg"
+       class="interpolation-image"
+       alt="Interpolate start reference image."/>
+
+    <img src="./static/images/blip2.png"
+         class="interpolation-image"
+         alt="Interpolate start reference image."/>
+
+    <img src="./static/images/gpt.png"
+         class="interpolation-image"
+         alt="Interpolate start reference image."/>
+    <div class="clear"></div>
 </div>
 
 <section class="section">
@@ -325,12 +327,12 @@
           </p>
         </div>
         <div id="wrapper">
-          <video id="home1" width="400" height="300" poster="images/result_Indian_wedding.jpeg" autoplay controls muted loop playsinline preload="none">
-            <source type="video/mp4" src="./static/images/result_Indian_wedding.jpeg" />
-          </video>
-          <video id="home2" width="400" height="300" poster="images/result_thai_wedding.jpeg" autoplay controls muted loop playsinline preload="none">
-            <source type="video/mp4" src="./static/images/result_thai_wedding.jpeg" />
-          </video>
+          <img src="./static/images/result_Indian_wedding.jpeg"
+               class="interpolation-image"
+               alt="Interpolate start reference image."/>
+          <img src="./static/images/result_thai_wedding.jpeg"
+               class="interpolation-image"
+               alt="Interpolate start reference image."/>
           <div class="clear"></div>
         </div>
       </div>
@@ -348,6 +350,9 @@
               Inference time is 7.7 s.
             </p>
           </div>
+          <img src="./static/images/blip2_error.jpeg"
+               class="interpolation-image"
+               alt="Interpolate start reference image."/>
         </div>
       </div>
 

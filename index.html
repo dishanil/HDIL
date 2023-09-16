@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Semantically Stylized Radiance Fields (S2RF)">
-  <meta name="keywords" content="ARF, NeRF">
+        content="How Do I Look?">
+  <meta name="keywords" content="BLIP-2, GPT, OpenAI, Prompt Engineering">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>S2RF: Semantically Stylized Radiance Fields</title>
 
@@ -140,18 +140,17 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">S2RF: Semantically Stylized Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">HDIL: How Do I Look?</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://www.linkedin.com/in/dishani-lahiri/">Dishani Lahiri</a>,</span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/moneishkumar/">Moneish Kumar</a>,</span>
+              <a href="https://www.linkedin.com/in/sayalikandarkar/">Sayali Kandarkar</a>,</span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/neeraj-panse-782b53155/">Neeraj Panse</a>
+              <a href="https://www.linkedin.com/in/asmita-hajra/">Asmita Hajra</a>
             </span>
-<!--             <span class="author-block">
-              <a href="">Rupanjali Kukal</a>
-            </span> -->
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/pratik-mandlecha/">Pratik Mandlecha</a>,</span>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -160,29 +159,19 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2309.01252"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/neepacmu/ARF-svox2"
+                <a href="https://github.com/dishanil/HowDoiLook"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=uxJheKETTKI"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -217,7 +206,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-          We present our method for transferring style from any arbitrary image(s) to object(s) within a 3D scene. Our primary objective is to offer more control in 3D scene stylization, facilitating the creation of customizable and stylized scene images from arbitrary viewpoints. To achieve this, we propose a novel approach that incorporates nearest neighborhood-based loss, allowing for flexible 3D scene reconstruction while effectively capturing intricate style details and ensuring multi-view consistency.
+            Abstract from Trello
           </p>
         </div>
       </div>
@@ -228,19 +217,19 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/vid1_text.mp4"
+        <source src="./static/images/dish_correct.png"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf"> S2RF can help style all objects belonging to a class in the scene based on any given style. 
+        <span class="dnerf"> An image of Dishani in this attire with input prompt as given in the "Occasion" textbox: "for going to a snow resort".
       </h2>
 
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/vid_multi_flower_text.mp4"
+        <source src="./static/images/dish_okay.png"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf"> S2RF can help style selected instances of the class in the scene based on any given styles. 
+        <span class="dnerf"> An image of Dishani in this attire with input prompt as given in the "Occasion" textbox: "for an Indian wedding".
       </h2>
     </div>
   </div>
@@ -297,48 +286,32 @@
   </div>
 </section> -->
 
-    
-<h2 class="title is-3">Stylized NeRFs</h2>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Pipeline</h2>
+        <div class="content has-text-justified">
+          <p>
+            Pipeline
+          </p>
+        </div>
+      </div>
+    </div>
     
 <div id="wrapper">
-    <video id="home1" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
-        <source type="video/mp4" src="./static/videos/room.mp4" /> 
+    <video id="home1" width="400" height="300" poster="images/flowchart.jpeg" autoplay controls muted loop playsinline preload="none">
+        <source type="video/mp4" src="./static/images/flowchart.jpeg" />
     </video>
-    <video id="home2" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
-        <source type="video/mp4" src="./static/videos/test_renders_path_table133_chair131.mp4" /> 
+    <video id="home2" width="400" height="300" poster="images/blip2.png" autoplay controls muted loop playsinline preload="none">
+        <source type="video/mp4" src="./static/images/blip2.png" />
     </video>
-  <video id="home3" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
-        <source type="video/mp4" src="./static/videos/room_styled.mp4" /> 
-    </video>
-    <div class="clear"></div> 
-</div>
-
-<div id="wrapper"> 
-    <video id="home1" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
-        <source type="video/mp4" src="./static/videos/flower.mp4" /> 
-    </video>
-    <video id="home2" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
-        <source type="video/mp4" src="./static/videos/flower_instance_styled.mp4" /> 
-    </video>
-    <video id="home3" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
-        <source type="video/mp4" src="./static/videos/flower_semantic.mp4" /> 
+  <video id="home3" width="400" height="300" poster="images/gpt.png" autoplay controls muted loop playsinline preload="none">
+        <source type="video/mp4" src="./static/images/gpt.png" />
     </video>
     <div class="clear"></div> 
 </div>
-
-<div id="wrapper"> 
-    <video id="home1" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
-        <source type="video/mp4" src="./static/videos/xmaschair.mp4" /> 
-    </video>
-    <video id="home2" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
-        <source type="video/mp4" src="./static/videos/xmas_chair_styled_2.mp4" /> 
-    </video>
-    <video id="home3" width="400" height="300" poster="images/video.jpg" autoplay controls muted loop playsinline preload="none"> 
-        <source type="video/mp4" src="./static/videos/xmaschair_styled.mp4" /> 
-    </video>
-    <div class="clear"></div> 
-</div>
-
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -346,44 +319,53 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3"></h2>
+        <h2 class="title is-3">Results</h2>
         <div class="content has-text-justified">
           <p>
-            We used Nearest Neighbor Feature Matching (NNFM) loss besides using Gram loss in order to train our radiance fields. Thus, we achieve higher quality renderings.
-
-            While performing our experimentations, we observed that subsampling the mask in order to extract the object features from the VGG feature space leads to boundary artifacts as the style loss applies to a larger area than the original mask owing to the receptive field of the model. In order to circumvent this, we work with the mask in the image space itself. The quality of the rendering depends heavily on the segmentation masks of the objects. As the SAM is very accurate at producing refined segmentation masks for objects, we do not really run into many issues pertaining this. Thus, we are able to produce high-quality and high fidelity renderings with specific objects being styled the way an user would want. Based on our experiments, our method has proven to be robust and scales well to increasing number of objects and styles. 
+            Inference time is 7.7 s.
           </p>
+        </div>
+        <div id="wrapper">
+          <video id="home1" width="400" height="300" poster="images/result_Indian_wedding.jpeg" autoplay controls muted loop playsinline preload="none">
+            <source type="video/mp4" src="./static/images/result_Indian_wedding.jpeg" />
+          </video>
+          <video id="home2" width="400" height="300" poster="images/result_thai_wedding.jpeg" autoplay controls muted loop playsinline preload="none">
+            <source type="video/mp4" src="./static/images/result_thai_wedding.jpeg" />
+          </video>
+          <div class="clear"></div>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
 
-    <section class="hero is-light is-small">
-      <div class="hero-body">
-        <div class="container">
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="item item-steve">
-              <video poster="" id="steve" autoplay controls muted loop playsinline height="200%">
-                <source src="./static/videos/GRAMVSNNFM.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
-            
-            <div class="item item-shiba">
-              <video poster="" id="shiba" autoplay controls muted loop playsinline height="200%">
-                <source src="./static/videos/mask_scale.mp4"
-                        type="video/mp4">
-              </video>
-            </div>
-            
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3"></h2>
+          <h2 class="title is-3">Why not use BLIP-2 directly?</h2>
+          <div class="content has-text-justified">
+            <p>
+              Inference time is 7.7 s.
+            </p>
           </div>
         </div>
       </div>
-    </section>
 
-    
-
-
-
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3"></h2>
+          <h2 class="title is-3">Future Scope</h2>
+          <div class="content has-text-justified">
+            <p>
+              Inference time is 7.7 s.
+            </p>
+          </div>
+        </div>
+      </div>
 
 </body>
 </html>

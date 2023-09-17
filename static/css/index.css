@@ -138,6 +138,10 @@ body {
   border-radius: 5px;
 }
 
+.medium-image {
+    width: 50%;
+}
+
 .interpolation-video-column {
 }
 

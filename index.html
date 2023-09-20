@@ -298,7 +298,31 @@
         <h2 class="title is-3">Pipeline</h2>
         <div class="content has-text-justified">
           <p>
-            Pipeline
+            The real-time pipeline consists of the following steps: <br>
+            <br>
+            <b>Step 1:</b> User uploads an image of themselves in an attire and the occasion they are dressed up for. <br>
+            <br>
+            <b>Step 2:</b> The image is passed through a state-of-the-art image-to-text model, BLIP-2, to generate a detailed description of the person's attire in the image. <br>
+            <br>
+            <b>Step 3:</b> Using this look description and the user-provided custom description of the event that they are dressed up for, we perform Prompt
+            Engineering to develop the most impactful prompt to query GPT3.5-turbo through OpenAI API calls. We decided on the following factors to construct the prompt for the query:
+            Color coordination,  Color appropriateness, Potential cultural sensitivity, Seasonal suitability, accessories.<br>
+            <br>
+            <b>Step 4:</b> The resulting text consists of an "Overall Rating", sub-category ratings, and possible suggestions in attire and/or accessories. <br>
+            <br>
+            An example prompt to the <b>BLIP-2</b> model is -> <br>
+            <code>
+              "Question: Explain the outfit in as much detail as possible. Answer:"<br>
+            </code>
+
+            <br>
+            An example prompt to the <b>GPT3.5-turbo</b> model after <b>Prompt Engineering</b> is -> <br>
+            <code>
+            I am a male, wearing a navy blue and gold embroidered kurta pajama. Details of the occasion are as follows:
+              attending a close friend's Indian wedding. Give one overall rating out of
+            'consider changing outfit', 'could be better', 'on point', and title it 'overall rating'. Consider:
+            Color coordination,  Color appropriateness, Potential cultural sensitivity, Seasonal suitability, accessories (for each of the categories give one succinct sentence.
+            </code>
           </p>
         </div>
       </div>
